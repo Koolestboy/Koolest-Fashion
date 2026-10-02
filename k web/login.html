@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login — Koolest Fashion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="wrap page-header"><h1>Account</h1></div>
+
+<div class="wrap section">
+
+  <div id="accountView" class="form-card" style="display:none; text-align:center">
+    <h3>Welcome back, <span id="accountName"></span></h3>
+    <p id="accountEmail" style="color:var(--text-dim)"></p>
+    <a href="shop.html" class="btn btn-outline btn-full" style="margin-bottom:10px">Continue Shopping</a>
+    <button class="btn btn-primary btn-full" id="signOutBtn">Sign Out</button>
+  </div>
+
+  <div id="authCard">
+    <form id="loginForm" class="form-card">
+      <h3 style="text-align:center; margin-bottom:22px">Log In</h3>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" name="password" required minlength="6" placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Log In</button>
+      <p class="form-note" style="text-align:center">Accounts are stored on this device for now — full sign-in launches with the backend.</p>
+      <p class="form-switch">New here? <button type="button" id="showSignup">Create an account</button></p>
+    </form>
+
+    <form id="signupForm" class="form-card" style="display:none">
+      <h3 style="text-align:center; margin-bottom:22px">Create Account</h3>
+      <div class="form-field">
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Your name" />
+      </div>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" name="password" required minlength="6" placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+      <p class="form-switch">Already have an account? <button type="button" id="showLogin">Log in</button></p>
+    </form>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="products.js"></script>
+<script src="store.js"></script>
+<script src="chrome.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

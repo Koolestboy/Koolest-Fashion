@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koolest Fashion — Style That Speaks For You</title>
+<meta name="description" content="Koolest Fashion — modern, considered clothing, shoes, bags and accessories for men and women." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Autumn / Winter Collection</p>
+    <h1>Style That Speaks For You.</h1>
+    <p>Considered clothing, shoes, bags and accessories for men and women — designed for people who dress with intention.</p>
+    <div class="hero-actions">
+      <a href="shop.html" class="btn btn-primary">Shop Now</a>
+      <a href="about.html" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-image"></div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured Products</h2>
+      <a href="shop.html">View all →</a>
+    </div>
+    <div class="grid grid-4" id="featuredGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="categories">
+  <div class="wrap">
+    <div class="section-head"><h2>Shop by Category</h2></div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>New Arrivals</h2>
+      <a href="shop.html">View all →</a>
+    </div>
+    <div class="grid grid-4" id="newGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><h2>Why Choose Us</h2></div>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Considered Materials</h3>
+        <p>Every piece is chosen for how it wears over years, not seasons — natural fibres, real leather, finishes built to last.</p>
+      </div>
+      <div class="feature">
+        <h3>Fast, Tracked Delivery</h3>
+        <p>Orders ship within 2–4 business days with tracking sent straight to you, wherever you are.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Returns</h3>
+        <p>Not the right fit? Return within 14 days for a full refund — no questions, no hassle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Customer Reviews</h2></div>
+    <div class="review-grid">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"The wool overcoat is the best thing I've bought all year. Fits exactly as described and feels genuinely premium."</p>
+        <div class="review-name">— Amara O.</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"Delivery was quick and the packaging alone felt luxurious. My new go-to for everyday staples."</p>
+        <div class="review-name">— Daniel K.</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"I messaged them on WhatsApp with a sizing question and got a reply in minutes. Great service, great clothes."</p>
+        <div class="review-name">— Priya S.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--ink); color:var(--ivory)">
+  <div class="wrap" style="text-align:center; max-width:560px">
+    <h2 style="color:#fff">Join the Koolest List</h2>
+    <p style="color:#b8b1a1">New arrivals, restocks and early access to sales — straight to your inbox.</p>
+    <form class="newsletter-form" style="margin-top:20px" onsubmit="handleNewsletter(event)">
+      <input type="email" required placeholder="Your email address" />
+      <button type="submit">Join</button>
+    </form>
+    <p class="newsletter-note" id="newsletterNote2" style="color:#d9a2a8"></p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="products.js"></script>
+<script src="store.js"></script>
+<script src="chrome.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("featuredGrid").innerHTML =
+      PRODUCTS.slice(0, 4).map(productCardHTML).join("");
+    document.getElementById("newGrid").innerHTML =
+      PRODUCTS.filter(p => p.tag === "New").slice(0, 4).map(productCardHTML).join("");
+    document.getElementById("catGrid").innerHTML = CATEGORIES.map((c, i) => {
+      const tones = ["tone-ink","tone-wine","tone-clay","tone-sand","tone-ink"];
+      return `<a class="cat-card ${tones[i % tones.length]}" href="shop.html?cat=${c.id}"><span>${c.label}</span></a>`;
+    }).join("");
+  });
+</script>
+</body>
+</html>

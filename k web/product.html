@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product — Koolest Fashion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="wrap section" id="pdRoot"></div>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head"><h2>You Might Also Like</h2></div>
+    <div class="grid grid-4" id="relatedGrid"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="products.js"></script>
+<script src="js/store.js"></script>
+<script src="chrome.js"></script>
+<script src="product.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const current = findProduct(params.get("id"));
+    const related = PRODUCTS.filter(p => current && p.category === current.category && p.id !== current.id).slice(0, 4);
+    document.getElementById("relatedGrid").innerHTML = related.map(productCardHTML).join("");
+  });
+</script>
+</body>
+</html>

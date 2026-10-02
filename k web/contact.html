@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Koolest Fashion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="wrap page-header"><h1>Get in Touch</h1></div>
+
+<div class="wrap section">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-detail">
+        <div>
+          <h4>WhatsApp</h4>
+          <p>The fastest way to reach us — sizing questions, order help, anything.</p>
+          <a href="https://wa.me/+2348052508996" target="_blank" rel="noopener" class="btn btn-wine" style="margin-top:10px">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div>
+          <h4>Email</h4>
+          <p>hello@koolestfashion.com</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div>
+          <h4>Store Hours</h4>
+          <p>Monday–Saturday, 10am–7pm</p>
+        </div>
+      </div>
+
+      <form class="form-card" style="margin-top:8px; margin-left:0" onsubmit="handleContactSubmit(event)">
+        <h3 style="margin-bottom:18px">Send a Message</h3>
+        <div class="form-field">
+          <label>Name</label>
+          <input type="text" required />
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" required />
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        <p class="form-note" id="contactNote" style="text-align:center"></p>
+      </form>
+    </div>
+
+    <div id="location">
+      <h4 style="margin-bottom:12px">Visit Our Store</h4>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=12+Adeola+Odeku+Street+Victoria+Island+Lagos&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Koolest Fashion store location">
+        </iframe>
+      </div>
+      <p style="margin-top:12px; font-size:0.92rem; color:var(--text-dim)">
+        Ikota School, Lekki-Epe-Expressway, Eti-Osa, Lagos
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="products.js"></script>
+<script src="store.js"></script>
+<script src="chrome.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>
